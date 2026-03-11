@@ -19,10 +19,12 @@
         {% include 'components/_header.html' %}
       </div>
       <div class="container-fluid mt-3">
-        <h5 class="text-start px-3" style="margin-top: 150px;"></h5>
+        <h5 class="text-start px-3" style="margin-top: 80px;"></h5>
+          {% include 'components/_messages.html' %}
         
         <div class="row mt-3 px-5">
           {% block content %}
+              
 
           {% endblock %}
         </div>
