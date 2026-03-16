@@ -8,9 +8,7 @@
 
 {% block content %}
 
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-<div class="d-flex justify-content-center align-items-center vh-200 p-3">
+<div class="d-flex justify-content-center align-items-center vh-100 p-3">
     <div class="login-card row g-0 shadow-lg overflow-hidden align-items-center" >
         
         <div class="col-md-4 d-none d-md-flex justify-content-center align-items-center">
@@ -45,17 +43,18 @@
             </form>
 
             {% if form.errors %}
-                    <div class="alert alert-danger mt-4">
-                        <ul class="mb-0">
-                            {% for field in form %}
-                            {% for error in field.errors %}
-                            <li>{{ error }}</li>
-                            {% endfor %}
-                            {% endfor %}
-                            {% for error in form.non_field_errors %}
-                            <li>{{ error }}</li>
-                            {% endfor %}
-                        </ul>
+                     <div class="container-fluid p-1">
+                        <div class="alert alert-danger alert-{{ message.tags }} alert-dismissible" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
+                                {% for field in form %}
+                                {% for error in field.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    {{ error }}
+                                {% endfor %}
+                        </div>
                     </div>
             {% endif %}
         </div>

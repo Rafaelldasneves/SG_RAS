@@ -1,44 +1,83 @@
 body{
-    background-image: url('/static/img/Back.jpg');
+    background-image: url('/static/img/GCM_02.jpeg');
     background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
     color: rgb(255, 255, 255);
     font-family: sans-serif;
+    padding: 10px;
 }
 
+/* card de login */
 .login-card{
-    max-width: 420px;
     background: rgba(255, 255, 255, 0);
     border: 2px solid rgba(255, 255, 255, .4);
     border-radius: 22px;
-    padding: 10px 60px;
+
+    padding: 30px;
     box-shadow: 0 20px 60px rgba(60, 50, 50, 0.4);
     backdrop-filter: blur(7px);
-    max-width: 600px; 
+
     width: 100%;
+    max-width: 600px;
+    margin: auto;
 }
 
+/* inputs */
 .form-control{
     background: rgba(255, 255, 255, .20);
     border: 1px solid rgba(255, 255, 255, .50);
+    color: white;
+}
+
+/* select */
+.form-select{
+    background: rgba(255, 255, 255, .20);
+    border: 1px solid rgba(255, 255, 255, .50);
+    color: white;
+}
+
+/* opções do select */
+#id_position option{
+    background-color: white;
+    color: black;
 }
 
 .form-control::placeholder{
-    color: rgba(255, 255, 255, 2);
+    color: rgba(255, 255, 255, 0.9);
 }
 
+/* focus */
 .form-control:focus{
     background: rgba(0, 0, 0, 0.12);
     border-color: rgba(255, 255, 255, .25);
 }
 
+/* botão */
 .btn{
     border-radius: 400px;
-    padding: o.7rem;
+    padding: 0.7rem;
 }
 
-.alert{
+/* alerta */
+.alert-danger{
     background: rgba(255, 0, 0, 0.25);
-    border: 2px solid rgba(255, 0, 0, 0.25);
+    border: 2px solid rgba(255, 0, 0, 0.50);
     color: rgb(255, 255, 255);
     border-radius: 22px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px){
+
+    body{
+        padding: 10px;
+    }
+
+    .login-card{
+        padding: 20px;
+        max-width: 100%;
+    }
+
 }

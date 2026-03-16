@@ -17,19 +17,15 @@ class RegisterForm(forms.ModelForm):
         widget=forms.PasswordInput()
     )
 
-    phone_number = forms.CharField(
-        label='Telefone',
-        # initial= '+5522',
-        widget=forms.TextInput(attrs={
-            'placeholder': '+5522000000000',
-            'type': 'tel',
-        }))
-
     class Meta:
         model = CustomUser
         fields = ('position', 'username', 'registration', 'name', 'admission_date', 'email', 'phone_number', 'password', 'confirm_password',) #'is_superuser', 'is_staff', 'is_active',)
 
-        widgets = {'admission_date': forms.DateInput (attrs= {'type':'date',})}
+        widgets = {'admission_date': forms.DateInput (attrs= {'type':'date',}),
+                   'position': forms.Select(attrs={'class': 'form-control'}),
+                    'position': forms.Select(attrs={'class': 'form-select bg-color text-white'
+            })
+        }
     
     def clean(self):
         cleaned_data = super().clean()

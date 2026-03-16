@@ -28,7 +28,7 @@ class UserAdmin(admin.ModelAdmin):
     change_user_password_template = None
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
+        (_("Personal info"), {"fields": ("position", "registration", "name", "admission_date", "email", "phone_number")}),
         (
             _("Permissions"),
             {
@@ -55,7 +55,7 @@ class UserAdmin(admin.ModelAdmin):
     form = UserChangeForm
     add_form = AdminUserCreationForm
     change_password_form = AdminPasswordChangeForm
-    list_display = ("username", "position", "registration", "email",)
+    list_display = ("username", "position", "registration",)
     list_filter = ("position", "groups")
     search_fields = ("username", "position", "registration",)
     ordering = ("username",)
