@@ -62,15 +62,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="menu-btn" href="{% url 'period' %}">Marcação</a>
+                        <a class="menu-btn" href="{% url 'list_periods' %}">Marcação</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="menu-btn" href="#">Minhas Marcações</a>
+                        <a class="menu-btn" href="{% url 'list_services' %}">Minhas Marcações</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="menu-btn" href="#">Gestor</a>
+                        <a class="menu-btn" href=" {% url 'create_periods' %}">Gestor</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="menu-btn" href=" {% url 'list_servidor' %}">Servidores </a>
                     </li>
 
                 </ul>

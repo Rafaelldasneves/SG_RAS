@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h3 class="display-6"> Deletar Período </h3>
+    
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text display-6">Deseja excluir o Período: <strong>{{ period.name }} ({{ period.date_start|date:"d/m/y" }} à {{ period.date_end|date:"d/m/y" }}) </strong> ? </p>
+            
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger"> Deletar </button>
+            </form>
+            <a href="{% url 'list_periods' %}" class="btn btn-secondary mt-3">Retornar Lista Periodo</a>
+        </div>
+
+    </div>
+</div>
+    
+
+{%endblock%}

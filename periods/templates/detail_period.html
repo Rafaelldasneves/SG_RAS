@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h3> {{object.name}} de {{object.date_start|date:"d/m/Y"}} à {{object.date_end|date:"d/m/Y"}} </h3>
+       
+        <h4> {{object.description}} </h4>
+    </div>
+
+</div>
+    
+
+{%endblock%}

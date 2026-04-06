@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row mb-3">
+    <h1> Lista de Períodos </h1>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{% url 'create_periods' %}" class="btn btn-success float-end">
+            <i class="bi bi-plus"> NOVO Período </i>
+        </a>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered ">
+        <thead class="thead-dark">
+            <tr>
+                <th> ID</th>
+                <th> Data Inicio </th>
+                <th> Data Fim </th>
+                <th> Descrição </th>
+                <th> Ações </th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            {% for period in periods %}
+            <tr>
+                <td> {{ period.name }} </td>
+                <td> {{ period.date_start }} </td>
+                <td> {{ period.date_end }} </td>
+                <td> {{ period.description }} </td>
+                <td> 
+                    <a href="{% url 'detail_period' period.id %}" class="btn btn-info btn-sm">
+                        <i class="bi bi-eye"></i>
+                    </a>
+                      <a href="{% url 'update_period' period.id %}" class="btn btn-warning btn-sm">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                      <a href="{% url 'delete_period' period.id %}" class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+{%endblock%}

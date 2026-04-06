@@ -1,4 +1,15 @@
- /* HEADER */
+body{
+    background-image: url('/static/img/GCM_02.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+/* HEADER */
 .ras-header{
     background: linear-gradient(90deg,#082c6c,#0d4fb8);
     color:white;
@@ -63,6 +74,13 @@
 .logout-btn:hover{
     background:#dc3545;
 }
+footer {
+    background: linear-gradient(90deg,#082c6c,#0d4fb8);
+    color:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    bottom: 0;
+    width: 100%;
+}
 
 /* MOBILE */
 @media (max-width:768px){
@@ -77,7 +95,6 @@
 .ras-title{
     font-size:14px;
 }
-
     
 .nav-item{
     padding: 8px;

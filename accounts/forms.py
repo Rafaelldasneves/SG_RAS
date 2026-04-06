@@ -19,12 +19,11 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ('position', 'username', 'registration', 'name', 'admission_date', 'email', 'phone_number', 'password', 'confirm_password',) #'is_superuser', 'is_staff', 'is_active',)
+        fields = ('position', 'username', 'registration', 'name', 'admission_date', 'email', 'phone_number', 'password', 'confirm_password',)
+        
 
         widgets = {'admission_date': forms.DateInput (attrs= {'type':'date',}),
-                   'position': forms.Select(attrs={'class': 'form-control'}),
-                    'position': forms.Select(attrs={'class': 'form-select bg-color text-white'
-            })
+                    'position': forms.Select(attrs={'class': 'form-control'}),
         }
     
     def clean(self):

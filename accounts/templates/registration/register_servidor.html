@@ -4,17 +4,13 @@
 
 {% load static %}
 
-{% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/style_register.css' %}">
-{% endblock %}
-
 {% block content %}
 
 <div class="box">
 
-    <div class="login-card">
+    <div class="login-card ">
 
-        <div class="form-box">
+        <div class="form-box w-50 mx-auto border border-primary rounded p-2">
 
             <h2 class="fw-bold text-center mb-4">Criar Conta</h2>
                 {% if form.errors %}
@@ -39,7 +35,7 @@
                     </div>
                 {% endif %}
 
-            <form action="{% url 'register' %}" method="post">
+            <form action="{% url 'register_servidor' %}" method="post">
                 {% csrf_token %}
 
                 <!-- Cargo -->
@@ -150,7 +146,7 @@
 
                 <!-- Link login -->
                 <div class="text-center">
-                    <a href="{% url 'login' %}" class="text-white text-decoration-none small">
+                    <a href="{% url 'login' %}" class="text-white text-decoration-none small fs-6">
                         Já sou cadastrado
                     </a>
                 </div>
